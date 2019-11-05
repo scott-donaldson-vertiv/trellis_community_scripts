@@ -1,4 +1,4 @@
-BSD 4-Clause License
+BSD 3-Clause License
 ====================
 
 _Copyright © `2016-2019`, `VERTIV™ & AVOCENT® INTERNATIONAL LTD.`_  
