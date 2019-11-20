@@ -50,8 +50,8 @@ Once detected it will validate connectivity to ports 636 & 3269, dump out presen
 #### Versions
 | Release   | Release Date      | Notes                                                                               | Bugs Fixed    |
 |-----------|-------------------|-------------------------------------------------------------------------------------|---------------|
-| 0.2       | 2019/11/01        | Modification to DNS query to use TCP & added timeout to OpenSSL certificate dump.   |               |
-| 0.1       | 2019/11/01        | Initial Release   |               |
+| 0.2       | 2019/11/20        | Modification to DNS query to use TCP & added timeout to OpenSSL certificate dump.   |               |
+| 0.1       | 2019/11/20        | Initial Release   |               |
 
 #### Authors & Contributors
 | Name                 | Organization      | Contact                                                          |
