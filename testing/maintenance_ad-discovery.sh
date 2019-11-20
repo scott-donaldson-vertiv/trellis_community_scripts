@@ -45,7 +45,7 @@ fi
 # Clear Screen
 echo -en "\ec"
 
-VERSION_STRING=0.1
+VERSION_STRING=0.2
 
 echo -e "\n################################################################################"
 echo -e "#"
@@ -75,7 +75,7 @@ function verify_secure() {
 	protocolslen=${#protocols[@]}
 	cipherslen=${#ciphers[@]}
 	
-	openssl s_client -connect ${target_host}:${target_port} -showcerts 2> /dev/null  | tee -a $OUTPUT_DIR/$OUTPUT_LOG
+	timeout 3 openssl s_client -connect ${target_host}:${target_port} -showcerts 2> /dev/null  | tee -a $OUTPUT_DIR/$OUTPUT_LOG
 	
 	if [ $? -eq 0 ]; then
 		printf "\n%-10s %-50s %-10b %-10b\n" "" "Cipher" "Protocol" "Status" | tee -a $OUTPUT_DIR/$OUTPUT_LOG
@@ -97,7 +97,7 @@ function verify_secure() {
 
 function detect_controllers() {
 	local DOMAIN="$1"
-	local -a AD_CONTROLLERS=(`dig _ldap._tcp.dc._msdcs.${DOMAIN} SRV +short +stats | sed -r -e 's/[0-9]{1,3}\s[0-9]{1,3}\s[0-9]{1,5}\s//g'`)
+	local -a AD_CONTROLLERS=(`dig _ldap._tcp.dc._msdcs.${DOMAIN} SRV +short +stats +tcp | sed -r -e 's/[0-9]{1,3}\s[0-9]{1,3}\s[0-9]{1,5}\s//g'`)
 	declare -p AD_CONTROLLERS
 }
 
