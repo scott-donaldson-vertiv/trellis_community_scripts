@@ -225,7 +225,8 @@ wlAdminKey=/home/oracle/\.wlst/KeyFile
 Then launch the script.
 ```shell
 . /u02/domains/<DOMAIN>/bin/setOSBDomainEnv.sh & . /u02/domains/<DOMAIN>/bin/setDomainEnv.sh
-java -Dweblogic.security.SSL.ignoreHostnameVerification=true -Dweblogic.security.TrustKeyStore=/u02/trelliskeys/trellis-trust.jks weblogic.WLST ./maintenance_log-configuration.py
+cd $COMMUNITY_SCRIPTS/configuration
+java -Dweblogic.security.SSL.ignoreHostnameVerification=true -Dweblogic.security.TrustKeyStore=/u02/trelliskeys/trellis-trust.jks weblogic.WLST ./maintentance_wl-config.py
 ```
 
 #### Versions
