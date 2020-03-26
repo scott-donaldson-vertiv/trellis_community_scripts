@@ -10,7 +10,7 @@
 # Email:
 #---------------------------------------------------------------------------------------------
 
-DIG_OUTPUT=/tmp/devclone_trellis-back_dig-domain-`date +"%Y%m%d-%H%M%S"`.log
+DIG_OUTPUT=/tmp/`hostname`_trellis-back_dig-domain-`date +"%Y%m%d-%H%M%S"`.log
 ITTERATIONS=100
 PAUSE=2
 OPTIONS=+short +stats
