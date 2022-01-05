@@ -14,7 +14,7 @@
 # Clear Screen
 echo -en "\ec"
 
-VERSION_STRING=0.1
+VERSION_STRING=0.2
 
 # Configuration
 # TODO: Add detection for WebLogic Domain.
@@ -66,7 +66,7 @@ echo -e "#\tVertiv Trellis(tm) Enterprise - Log Archive Script $VERSION_STRING"
 echo -e "#"
 echo -e "################################################################################\n\n"
 
-if [[ -d '/u02/domains/IDMDomain' ]]; then
+if [[ -d '/u02/app/oracle/oradata' ]]; then
   echo "[Info]: This is the back server." 2>&1 | tee -a $OUTPUT_DIR/$OUTPUT_LOG
   HOST=back
   WL_DOMAIN=IDMDomain
