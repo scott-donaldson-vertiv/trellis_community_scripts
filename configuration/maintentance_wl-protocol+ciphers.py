@@ -177,16 +177,16 @@ def banner():
     println()
 
 
-def getTrellisVersion():
-    with open('/u01/trellis/trellis.version') as temp_f:
-        versionfile = temp_f.readlines()
-    for line in versionfile:
-        if 'trellis.version' in line:
-            pattern = re.compile(r'(5.[0-1].[0-9])|([4].[0-1].[0-3])')
-            teVersion = re.findall(pattern, line)
-            print('Version: ' + strin(teVersion))
-            return True # The string is found
-    return False  # The string does not exist in the file
+# def getTrellisVersion():
+#     with open('/u01/trellis/trellis.version') as temp_f:
+#         versionfile = temp_f.readlines()
+#     for line in versionfile:
+#         if 'trellis.version' in line:
+#             pattern = re.compile(r'(5.[0-1].[0-9])|([4].[0-1].[0-3])')
+#             teVersion = re.findall(pattern, line)
+#             print('Version: ' + strin(teVersion))
+#             return True # The string is found
+#     return False  # The string does not exist in the file
 
 def main():
     print ' '
