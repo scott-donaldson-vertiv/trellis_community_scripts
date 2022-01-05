@@ -14,16 +14,16 @@
 # Clear Screen
 echo -en "\ec"
 
-VERSION_STRING=0.1
+VERSION_STRING=0.2
 
 # Configuration
 # TODO: Add detection for WebLogic Domain.
 # TODO: Add launch parameter to specify WebLogic Domain.
 WL_DOMAIN=TrellisDomain
-BACK_SEARCH_DIRS=/u02/app/ /u02/domains/IDMDomain/ /u02/licensing/ /u01/fm/11.1.1.7/asinst_1/diagnostics/
-FRONT_SEARCH_DIRS=/u02/
+BACK_SEARCH_DIRS=/u02/app/ /u02/domains/IDMDomain/ /u02/licensing/ /u01/fm/11.1.1.7/asinst_1/diagnostics/ /u01/fm/11.1.1.7/asinst_1/EMAGENT/ /u01/fm/11.1.1.7/oracle_common/ /u01/fm/11.1.1.7/Oracle_IDM1/ /u03/logs/installer/
+FRONT_SEARCH_DIRS=/u02/ /u03/logs/installer/
 OID_HOME=/u01/fm/11.1.1.7/asinst_1
-FILE_AGE_DAYS=14
+FILE_AGE_DAYS=7
 OUTPUT_DIR=/u03/logs/diagnostics
 
 declare -a wlservers_front=("AdminServer" "adf_server" "soa_server" "osb_server" "jasper_server")
@@ -66,7 +66,7 @@ echo -e "#\tVertiv Trellis(tm) Enterprise - Log Archive Script $VERSION_STRING"
 echo -e "#"
 echo -e "################################################################################\n\n"
 
-if [[ -d '/u02/domains/IDMDomain' ]]; then
+if [[ -d '/u02/app/oracle/oradata' ]]; then
   echo "[Info]: This is the back server." 2>&1 | tee -a $OUTPUT_DIR/$OUTPUT_LOG
   HOST=back
   WL_DOMAIN=IDMDomain
